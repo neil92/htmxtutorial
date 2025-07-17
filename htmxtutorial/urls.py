@@ -20,6 +20,10 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # Basic HTMX Tutorial
     path("", views.index, name="index"),
     path("snippet", views.snippet, name="snippet"),
+    # Search Contacts Table Tutorial
+    path("contacts", views.contacts, name="contacts"),
+    path("search", views.search, name="search"),
 ]

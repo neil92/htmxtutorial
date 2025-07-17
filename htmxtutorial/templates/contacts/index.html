@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+</head>
+
+<body hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'>
+<h3>
+  Search Contacts
+  <span class="htmx-indicator">
+    Searching...
+  </span>
+</h3>
+<input class="form-control" type="search"
+       name="search" placeholder="Begin Typing To Search Users..."
+       hx-post="/search"
+       hx-trigger="input changed delay:500ms, keyup[key=='Enter'], load"
+       hx-target="#search-results"
+       hx-indicator=".htmx-indicator">
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="search-results" class="">
+    </tbody>
+  </table>
+</body>
+
+</html>
