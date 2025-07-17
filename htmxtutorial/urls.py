@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from . import views_final
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +27,6 @@ urlpatterns = [
     # Search Contacts Table Tutorial
     path("contacts", views.contacts, name="contacts"),
     path("search", views.search, name="search"),
+    path("contacts_final", views_final.contacts_final, name="contacts_final"),
+    path("search_final", views_final.search_final, name="search_final"),
 ]
