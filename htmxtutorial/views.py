@@ -15,7 +15,8 @@ def contacts(request):
   return render(request, "contacts/index.html")
 
 
-def search(request: HttpRequest):
+"""
+def (request: HttpRequest):
   all_contacts = pd.read_csv("htmxtutorial/static/contacts.csv")
   search_string = request.POST["search"]
   is_in_first_name = all_contacts.loc[:, "first_name"].str.contains(search_string)
@@ -24,3 +25,4 @@ def search(request: HttpRequest):
   contacts_found = all_contacts.loc[is_in_first_name | is_in_last_name | is_in_email, :]
   contacts_found = contacts_found.to_dict("records")
   return render(request, "contacts/table_template.html", {"contacts_found": contacts_found})
+"""

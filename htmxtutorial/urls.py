@@ -26,7 +26,6 @@ urlpatterns = [
     path("snippet", views.snippet, name="snippet"),
     # Search Contacts Table Tutorial
     path("contacts", views.contacts, name="contacts"),
-    path("search", views.search, name="search"),
     path("contacts_final", views_final.contacts_final, name="contacts_final"),
     path("search_final", views_final.search_final, name="search_final"),
 ]
